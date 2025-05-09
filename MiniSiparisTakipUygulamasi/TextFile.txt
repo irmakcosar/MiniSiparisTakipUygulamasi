@@ -1,0 +1,17 @@
+﻿Code first yaklaşımda veri tabanı işlemleri için Entity Framework kullanılır.
+
+Context içerisinde tanımladığımız bilgisayar bağlantımızı program cs içerindeki sql serves kulolanıdğımızı tanımlamayı unutmuyoruz 
+
+Seed datalarımızı ise onmodelcreating içerisine yazıyoruz.buda oluşturulurken bunları da dahil et gibi bir metotdur.
+
+oluşturduğumuz entitylerimizi ise context içerisine tanımlıyoruz.dbset içerisinde tablo haline getiriyoruz ve bu nesnelere onmodelcreating içerisinde bir anahtar tanımlıyoruz(idsi üzerinden)
+
+****
+Görünüşe göre, döngüde her bir item nesnesi için @foreach döngüsü kullanıyorsunuz, ancak iç içe iki kez döngü kullanıyorsunuz. Bu, her item için tüm Model koleksiyonunu tekrar iterasyona sokmak anlamına gelir ki bu durum doğru bir şekilde çalışmaz.
+
+bilgileri almakl için iç içe foreach döngüsü kullanmak yerine, her bir item için sadece bir kez döngü kullanılmalı yoksa doğru çalışmaz .!!!
+
+
+
+
+

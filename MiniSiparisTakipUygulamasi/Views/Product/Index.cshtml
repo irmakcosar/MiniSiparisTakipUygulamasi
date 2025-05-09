@@ -1,0 +1,34 @@
+﻿@model List<MiniSiparisTakipUygulamasi.Models.Entities.Products>
+
+<h3 align="center">product index sayfası</h3>
+
+<div align="center">
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>ProductName</th>
+			<th>ProductPrice</th>
+			
+			
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.ProductId</td>
+				<td>@item.ProductName</td>
+				<td>@item.UnitPrice</td>
+					
+				
+			</tr>
+		}
+	</tbody>
+</table>
+</div>
+
+		
+		
+	

@@ -6,10 +6,32 @@ Seed datalarımızı ise onmodelcreating içerisine yazıyoruz.buda oluşturulur
 
 oluşturduğumuz entitylerimizi ise context içerisine tanımlıyoruz.dbset içerisinde tablo haline getiriyoruz ve bu nesnelere onmodelcreating içerisinde bir anahtar tanımlıyoruz(idsi üzerinden)
 
-****
+-------------------------
 Görünüşe göre, döngüde her bir item nesnesi için @foreach döngüsü kullanıyorsunuz, ancak iç içe iki kez döngü kullanıyorsunuz. Bu, her item için tüm Model koleksiyonunu tekrar iterasyona sokmak anlamına gelir ki bu durum doğru bir şekilde çalışmaz.
 
 bilgileri almakl için iç içe foreach döngüsü kullanmak yerine, her bir item için sadece bir kez döngü kullanılmalı yoksa doğru çalışmaz .!!!
+-------------------------
+
+	@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.ProductId</td>
+				<td>@item.ProductName</td>
+				<td>@item.UnitPrice</td>
+				<td><a href="/product/details/@item.ProductId">Ürün Detay</a></td>
+				
+			</tr>
+		}
+		foreach içinde item olarak tanımladığımız için modelin propertiseinin bilgilerine bunları @item yazarak erişeibiliriz 
+		
+		en sondaki tdde ise verdiğimiz id ile product detay sayfasına yönlendirme yapıyoruzçBu yönlendirmenin yolunu da program.csdeki mapControllerRoute kısmında tanımlaıyoruz ben productdetay sayfasını(details) 
+
+		app.MapControllerRoute(
+    name: "ProductDetail",
+    pattern: "{controller=Product}/{action=Details}/{id?}"); 
+	
+	bu şekilde tanımladım linkde de /product/details/@item.ProductId" böyle verdim yani itemın productid bilgisi ile yönlendirme yapacak
+	-----------------
 
 
 

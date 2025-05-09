@@ -31,6 +31,15 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Product}/{action=Details}");
+    pattern: "{controller=Home}/{action=Index}");
+
+//view sayfalarýna gitmek için yazýcaðýmýz route url 
+app.MapControllerRoute(
+    name: "ProductDetail",
+    pattern: "{controller=Product}/{action=Details}/{id?}");
+
+app.MapControllerRoute(
+    name: "ProductIndex",
+    pattern: "{controller=Product}/{action=Index}");
 
 app.Run();
